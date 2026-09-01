@@ -1,0 +1,12 @@
+.env
+__pycache__/
+*.pyc
+chroma_store/
+.pytest_cache/
+data/raw_html/
+
+.history/
+
+docs/
+
+Python Task.pdf

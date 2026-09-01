@@ -1,0 +1,12 @@
+.env
+.git
+.history
+__pycache__
+**/__pycache__
+*.pyc
+.pytest_cache
+chroma_store
+data/raw_html
+docs
+tests
+*.pdf

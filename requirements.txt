@@ -1,0 +1,14 @@
+requests
+beautifulsoup4
+psycopg2-binary
+python-dotenv
+fastapi
+uvicorn[standard]
+chromadb
+sentence-transformers
+groq
+litellm
+crewai
+crewai-tools
+pytest
+httpx

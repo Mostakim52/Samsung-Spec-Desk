@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Samsung Spec Desk</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%2316181D'/%3E%3Crect x='20' y='10' width='24' height='44' rx='5' fill='%23F6F7F9'/%3E%3Crect x='24' y='16' width='16' height='28' rx='2' fill='%231428A0'/%3E%3Crect x='10' y='46' width='44' height='7' rx='2' fill='%23FFE24A' transform='rotate(-4 32 50)'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@125,400..900&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<header class="masthead">
+  <div class="masthead-left">
+    <h1>Samsung Spec Desk</h1>
+    <p class="tagline">23 phones · scraped from GSMArena · ask anything</p>
+  </div>
+  <div class="masthead-right">
+    <span class="count-badge" id="count">—</span>
+    <span class="count-label">phones in catalog</span>
+  </div>
+</header>
+
+<main class="desk">
+  <aside class="rail catalog" aria-label="Phone catalog">
+    <h2 class="rail-title">Catalog</h2>
+    <ul id="phone-list" class="phone-list"></ul>
+  </aside>
+
+  <section class="desk-center" aria-label="Query desk">
+    <div id="chat" class="conversation" aria-live="polite"></div>
+    <div id="pipeline" class="pipeline" hidden>
+      <ol class="pipeline-steps">
+        <li class="pipeline-step" data-step="1"><span class="step-tag">01</span> Spec Retriever — pulling datasheet from PostgreSQL</li>
+        <li class="pipeline-step" data-step="2"><span class="step-tag">02</span> Review Writer — drafting the review from specs</li>
+      </ol>
+    </div>
+    <div class="chips" id="chips">
+      <button class="chip" type="button">What are the camera specs of the Samsung Galaxy S23?</button>
+      <button class="chip" type="button">Which Samsung phone has the best battery life?</button>
+      <button class="chip" type="button">How does the Galaxy S23 compare to the S22 in terms of performance?</button>
+    </div>
+    <form id="ask-form" class="ask-form">
+      <label class="visually-hidden" for="query">Your question</label>
+      <input id="query" class="query-input" type="text"
+             placeholder="Ask about any phone in the catalog…" autocomplete="off">
+      <button type="submit" class="ask-btn">Ask</button>
+    </form>
+  </section>
+
+  <aside class="rail receipts" aria-label="Retrieval receipts">
+    <h2 class="rail-title">Receipts</h2>
+    <p class="rail-note">Every answer shows exactly which datasheets it used.</p>
+    <div id="receipts" class="receipt-cards"></div>
+  </aside>
+</main>
+
+<footer class="colophon">
+  <span>Source: GSMArena · data live from PostgreSQL</span>
+  <span id="footer-count">— phones</span>
+</footer>
+
+<script src="/static/app.js"></script>
+</body>
+</html>
